@@ -7,7 +7,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return   GetMaterialApp(
+     debugShowCheckedModeBanner: false,
       title: 'Onyx Delivery',
       initialRoute: AppRoutes.login,
       getPages: AppRoutes.routes,

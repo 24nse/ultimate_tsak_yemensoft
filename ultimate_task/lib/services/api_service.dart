@@ -1,4 +1,10 @@
+
+
+
+
 import 'package:dio/dio.dart';
+
+import 'package:get/get_core/src/get_main.dart';
 import '../models/login_request.dart';
 
 class ApiService {
@@ -12,4 +18,8 @@ class ApiService {
   Future<Response> login(LoginRequest request) async {
     return await _dio.post('CheckDeliveryLogin', data: request.toJson());
   }
+
+
+
+
 }

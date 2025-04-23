@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_task/viewmodels/login_controller.dart';
+import 'package:ultimate_task/widgets/custom_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -8,30 +9,117 @@ class LoginScreen extends StatelessWidget {
     final controller = Get.find<LoginController>();
 
     return Scaffold(
-      appBar: AppBar(title: Text('تسجيل الدخول')),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
+      body: SizedBox(
         child: Column(
           children: [
-            TextField(
-              controller: controller.userIdController,
-              decoration: InputDecoration(labelText: 'رقم المستخدم'),
+            Stack(
+              children: [
+                Container(
+                  height: 130,
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                     
+                      Image.asset(
+                        'assets/ONYX.png', 
+                 
+                        height: 120,
+                      ),
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.language,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            TextField(
-              controller: controller.passwordController,
-              decoration: InputDecoration(labelText: 'كلمة المرور'),
-              obscureText: true,
+        
+            SizedBox(height: 10),
+        
+            Text(
+              "Welcome Back!",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.teal[900],
+              ),
             ),
+            SizedBox(height: 5),
+            Text(
+              "Log back into your account",
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey[700],
+              ),
+            ),
+        
             SizedBox(height: 20),
+        
+            // User ID
+            customTextField(hint: 'User ID', controller:   controller.userIdController,),
+        
+            // Password
+            customTextField(hint: 'Password', isPassword: true,controller: controller.passwordController ),
+        
+            SizedBox(height: 10),
+        
+            
+            Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.only(right: 30),
+                child: Text(
+                  "Show More",
+                  style: TextStyle(
+                    color: Colors.teal[900],
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+        
+            SizedBox(height: 10),
+        
             Obx(() => controller.isLoading.value
                 ? CircularProgressIndicator()
-                : ElevatedButton(
-                    onPressed: controller.login,
-                    child: Text('تسجيل الدخول'),
-                  )),
+                : Container(
+                    width: 300,
+              height: 40,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 20, 56, 80),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),),
+                      onPressed: controller.login,
+                      child: Text('Login',style: TextStyle(color: Colors.white),),
+                    ),
+                )),
+       
+        
+            SizedBox(height: 10),
+        
+            Image.asset(
+              'assets/delivery.png', 
+              height: 150,
+            ),
           ],
         ),
       ),
     );
   }
-}
+
+
+  
+  }

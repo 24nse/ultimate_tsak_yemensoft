@@ -18,7 +18,7 @@ class LoginController extends GetxController {
     final password = passwordController.text.trim();
 
     if (userId.isEmpty || password.isEmpty) {
-      Get.snackbar('خطأ', 'يرجى إدخال جميع الحقول');
+      Get.snackbar('Error', '   Error: Please fill in all fields');
       return;
     }
 
@@ -45,11 +45,11 @@ class LoginController extends GetxController {
 
 
       } else {
-        Get.snackbar('خطأ', 'حدث خطأ أثناء الاتصال بالخادم');
+        Get.snackbar('Error', 'An error occurred while connecting to the server');
       }
     } catch (e) {
-      Get.snackbar('خطأ', 'حدث خطأ: $e');
-      print(e);
+      Get.snackbar('Error', ' error occurred: $e');
+   
     } finally {
       isLoading.value = false;
     }
