@@ -12,39 +12,43 @@ class LoginScreen extends StatelessWidget {
       body: SizedBox(
         child: Column(
           children: [
-            Stack(
-              children: [
-                Container(
-                  height: 130,
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                     
-                      Image.asset(
+     Stack(
+            children: [
+              Container(
+                height: 130,
+                color:  Colors.transparent
+              ),
+                Image.asset(
                         'assets/ONYX.png', 
                  
                         height: 120,
                       ),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.language,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
+              Positioned(
+                right: -80,
+                top: -80,
+                child: Container(
+                  width: 200,
+                  height: 180,
+                  decoration: const BoxDecoration(
+                    color:  Colors.red,
+                    shape: BoxShape.circle,
                   ),
                 ),
-              ],
-            ),
+              ),
+              Positioned(
+                right: 20,
+                top: 20,
+                child: const Icon(Icons.language, color: Colors.white),
+              ),
+      
         
+         
+            ],
+          ),
+
+     
+
+
             SizedBox(height: 10),
         
             Text(

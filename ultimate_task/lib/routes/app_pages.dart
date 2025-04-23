@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:ultimate_task/bindings/home_binding.dart';
 import 'package:ultimate_task/views/home_screen.dart';
 import 'package:ultimate_task/views/login/login_screen.dart';
 import '../bindings/login_binding.dart';
@@ -15,7 +16,8 @@ class AppRoutes {
     ),
        GetPage(
       name: AppRoutes.home,
-      page: () =>  HomeScreen(),
+       page: () =>  HomeScreen(),
+      binding: HomeBinding(),
     ),
   ];
 }
