@@ -42,8 +42,8 @@ Widget customWidgetAppbar() {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
-              Text("Nooh", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-              Text("Saeed", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400)),
+              Text("nooh", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+              Text("saeed", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400)),
             ],
           ),
         ),

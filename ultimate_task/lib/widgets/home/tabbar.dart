@@ -2,6 +2,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:ultimate_task/viewmodels/home_controller.dart';
 
@@ -43,7 +44,7 @@ class Tabbar extends StatelessWidget {
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      'New',
+                      'new'.tr,
                       style: TextStyle(
                         color: selectedTab == 0 ? Colors.white : Colors.black,
                         fontWeight: FontWeight.bold,
@@ -62,7 +63,7 @@ class Tabbar extends StatelessWidget {
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      'Others',
+                      'others'.tr,
                       style: TextStyle(
                         color: selectedTab == 1 ? Colors.white : Colors.black,
                         fontWeight: FontWeight.bold,

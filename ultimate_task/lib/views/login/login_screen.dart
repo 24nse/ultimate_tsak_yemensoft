@@ -27,7 +27,7 @@ class LoginScreen extends StatelessWidget {
 
         //Title
             Text(
-              "Welcome Back!",
+              "welcome_back".tr,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -36,7 +36,7 @@ class LoginScreen extends StatelessWidget {
             ),
             SizedBox(height: 5),
             Text(
-              "Log back into your account",
+              "login_subtitle".tr,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey[700],
@@ -46,10 +46,10 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 20),
         
             // User ID
-            customTextField(hint: 'User ID', controller:   controller.userIdController,),
+            customTextField(hint: 'userId'.tr, controller:   controller.userIdController,),
         
             // Password
-            customTextField(hint: 'Password', isPassword: true,controller: controller.passwordController ),
+            customTextField(hint: 'password'.tr, isPassword: true,controller: controller.passwordController ),
         
             SizedBox(height: 10),
         

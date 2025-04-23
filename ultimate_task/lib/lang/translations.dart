@@ -7,10 +7,24 @@ class AppTranslations extends Translations {
           'login': 'Login',
           'home': 'Home',
           'language': 'Language',
-          'select_language': 'Select Language',
+          'choose_language': 'Choose Language',
           'english': 'English',
           'arabic': 'Arabic',
-          "apply": "Apply"
+          "apply": "Apply",
+          "welcome_back": "Welcome back",
+  "login_subtitle": "Log back into your account",
+  "userId": "User ID",
+  "password": "Password",
+  "show_more": "Show More",
+  "new": "New",
+  "others": "Others",
+  "nooh": "Nooh",
+    "saeed": "سعيد ",
+
+  "returned": "Returned",
+  "delivered": "Delivered",
+  "order_details": "Order Details",
+  "delivering": "Delivering"
 },
 
       
@@ -18,10 +32,24 @@ class AppTranslations extends Translations {
           'login': 'تسجيل الدخول',
           'home': 'الرئيسية',
           'language': 'اللغة',
-          'select_language': 'اختر اللغة',
+          'choose_language': 'اختر اللغة',
           'english': 'الإنجليزية',
           'arabic': 'العربية',
-           "apply": "تطبيق"
+           "apply": "تطبيق",
+            "welcome_back": "مرحبًا بعودتك",
+  "login_subtitle": "سجل الدخول إلى حسابك",
+  "userId": "معرّف المستخدم",
+  "password": "كلمة المرور",
+  "show_more": "عرض المزيد",
+  "new": "جديد",
+  "others": "أخرى",
+  "nooh": "نوح ",
+    "saeed": "سعيد ",
+
+  "returned": "تم الإرجاع",
+  "delivered": "تم التوصيل",
+  "order_details": "تفاصيل الطلب",
+  "delivering": "جاري التوصيل"
         },
       };
 }

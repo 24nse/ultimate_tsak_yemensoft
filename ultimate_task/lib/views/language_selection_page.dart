@@ -16,13 +16,13 @@ class LanguageSelectionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('select_language'.tr),
+        title: Text('choose_language'.tr),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             Get.defaultDialog(
-              title: 'select_language'.tr,
+              title: 'choose_language'.tr,
               content: Column(
                 children: [
                   ListTile(

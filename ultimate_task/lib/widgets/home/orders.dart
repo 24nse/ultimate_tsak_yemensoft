@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:ultimate_task/viewmodels/home_controller.dart';
 
@@ -26,7 +27,7 @@ class Orders extends StatelessWidget {
         }
     
         if (bills.isEmpty) {
-          return const Center(child: Text('No Orders yet'));
+          return const Center(child: Text('no_orders_yet'));
         }
     
         return ListView.builder(
@@ -60,7 +61,7 @@ class Orders extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
     Text(
-      "Status\n${bill.status == 0 ? 'New' : bill.status == 1 ? 'Delivered' : bill.status == 2 ? 'Returned' : 'Delivering'}",
+      "Status\n${bill.status == 0 ? 'new'.tr : bill.status == 1 ? 'delivered'.tr : bill.status == 2 ? 'returned'.tr : 'delivering'.tr}",
       style: TextStyle(
         color: bill.status == 0
             ? Colors.green
