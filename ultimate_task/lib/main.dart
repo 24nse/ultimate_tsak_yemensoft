@@ -6,6 +6,8 @@ void main() async {
   
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
+   final box = GetStorage();
+  final locale = box.read('locale') ?? 'en';
+  runApp(MyApp(locale: locale));
 
-  runApp(const MyApp());
 }

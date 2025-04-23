@@ -1,41 +1,56 @@
 
   import 'package:flutter/material.dart';
+import 'package:ultimate_task/utils/helper/dialog_helper.dart';
 
-Widget cutomAppbar() {
+Widget customAppbar() {
     return Stack(
-           children: [
-             Container(
-               height: 130,
-               color:  Colors.transparent
-             ),
-               Image.asset(
-                       'assets/ONYX.png', 
-                
-                       height: 120,
-                     ),
-             Positioned(
-               right: -80,
-               top: -80,
-               child: Container(
-                 width: 200,
-                 height: 180,
-                 decoration: const BoxDecoration(
-                   color:  Colors.red,
-                   shape: BoxShape.circle,
-                 ),
-               ),
-             ),
-             Positioned(
-               right: 20,
-               top: 20,
-               child: const Icon(Icons.language, color: Colors.white),
-             ),
-     
+      children: [
+        Container(
+          height: 110,
+          color:  Colors.transparent,
+        ),
+        Positioned(
+          right: -60,
+          top: -60,
+          child: Container(
+            width: 200,
+            height: 180,
+            decoration: const BoxDecoration(
+              color:  Color.fromARGB(255, 50, 56, 80),
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+        Positioned(
+          right: 20,
+          top: 40,
+          child: InkWell(
+            onTap: () =>DialogHelper.showLanguageDialog(),
+            child: Container( 
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5)
+              ),
+              height: 30,
+              width: 30,
+              child: const Icon(Icons.language, color: Colors.black)),
+          ),
+        ),
+        Positioned(
+          left: 20,
+          top: 40,
+          child: Image.asset(
+            'assets/ONYX.png', 
+                                    height: 80,
+      
+          ),
+        ),
        
-        
-           ],
-         );
+      ],
+    );
   }
+
+
 
 
 

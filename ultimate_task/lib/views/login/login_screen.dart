@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:ultimate_task/utils/helper/dialog_helper.dart';
 import 'package:ultimate_task/viewmodels/login_controller.dart';
+import 'package:ultimate_task/views/language_selection_page.dart';
 import 'package:ultimate_task/widgets/custom_text_field.dart';
 import 'package:ultimate_task/widgets/custom_show_more.dart';
+import 'package:ultimate_task/widgets/home/custom_widget_appbar.dart';
 import 'package:ultimate_task/widgets/login/custom_appbar.dart';
 
 class LoginScreen extends StatelessWidget {
+  
+ 
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<LoginController>();
@@ -14,11 +20,9 @@ class LoginScreen extends StatelessWidget {
       body: SizedBox(
         child: Column(
           children: [
-         
-         // Appbar
-         cutomAppbar(),
-
-    
+        
+          customAppbar(),
+       
             SizedBox(height: 10),
 
         //Title
@@ -68,7 +72,7 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     ),),
                       onPressed: controller.login,
-                      child: Text('Login',style: TextStyle(color: Colors.white),),
+                      child: Text('login'.tr,style: TextStyle(color: Colors.white),),
                     ),
                 )),
        

@@ -1,5 +1,6 @@
 
   import 'package:flutter/material.dart';
+import 'package:ultimate_task/utils/helper/dialog_helper.dart';
 
 Widget customWidgetAppbar() {
     return Stack(
@@ -23,14 +24,17 @@ Widget customWidgetAppbar() {
         Positioned(
           right: 20,
           top: 40,
-          child: Container( 
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(5)
-            ),
-            height: 30,
-            width: 30,
-            child: const Icon(Icons.language, color: Colors.black)),
+          child: InkWell(
+            onTap: () =>DialogHelper.showLanguageDialog(),
+            child: Container( 
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5)
+              ),
+              height: 30,
+              width: 30,
+              child: const Icon(Icons.language, color: Colors.black)),
+          ),
         ),
         Positioned(
           left: 20,

@@ -7,14 +7,30 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:ultimate_task/app/app.dart';
+import 'package:ultimate_task/lang/translations.dart';
 
 import 'package:ultimate_task/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+      await tester.pumpWidget(
+      GetMaterialApp(
+        title: 'Test',
+        translations: AppTranslations(),
+        locale: const Locale('en'),
+        fallbackLocale: const Locale('en'),
+        home: const Scaffold(
+          body: Text('Test Page'),
+        ),
+      ),
+    );
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const MyApp(locale: '',));
+    
+    // تحقق من وجود العنصر على الشاشة
+    expect(find.text('Test Page'), findsOneWidget);
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
