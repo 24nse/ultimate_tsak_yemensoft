@@ -15,8 +15,8 @@ Widget customAppbar() {
           child: Container(
             width: 200,
             height: 180,
-            decoration: const BoxDecoration(
-              color:  Color.fromARGB(255, 50, 56, 80),
+            decoration:  BoxDecoration(
+              color:  Colors.red,
               shape: BoxShape.circle,
             ),
           ),

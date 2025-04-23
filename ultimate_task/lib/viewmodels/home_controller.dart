@@ -1,5 +1,6 @@
 
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:ultimate_task/services/api_service.dart';
 import '../models/delivery_bill_model.dart';
 import '../services/db_service.dart';
@@ -20,7 +21,9 @@ var selectedTab = 0.obs;
   void fetchBills() async {
     try {
       isLoading.value = true;
-      final apiData = await _api.getDeliveryBillsItems('1010');
+      String? userId = GetStorage().read('userId');
+    
+      final apiData = await _api.getDeliveryBillsItems(userId!);
 
       if (apiData.isNotEmpty) {
         await _db.insertBills(apiData);
