@@ -1,21 +1,22 @@
 import 'package:get/get.dart';
+import 'package:ultimate_task/views/home_screen.dart';
 import 'package:ultimate_task/views/login/login_screen.dart';
+import '../bindings/login_binding.dart';
 
-
-
-class AppPages {
-  static const initial = Routes.login;
+class AppRoutes {
+  static const String login = '/login';
+  static const String home = '/home';
 
   static final routes = [
     GetPage(
-      name: Routes.login,
-      page: () => const LoginScreen(),
+      name: login,
+      page: () => LoginScreen(),
+      binding: LoginBinding(),
     ),
-  
+      GetPage(
+      name: home,
+      page: () => HomeScreen(),
+      // binding: LoginBinding(),
+    ),
   ];
-}
-
-
-abstract class Routes {
-  static const login = '/login';
 }

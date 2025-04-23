@@ -7,11 +7,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Ultimate Task',
-      debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.initial,
-      getPages: AppPages.routes,
+    return   GetMaterialApp(
+      title: 'Onyx Delivery',
+      initialRoute: AppRoutes.login,
+      getPages: AppRoutes.routes,
     );
   }
 }
