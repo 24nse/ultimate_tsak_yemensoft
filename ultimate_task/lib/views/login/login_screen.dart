@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_task/viewmodels/login_controller.dart';
 import 'package:ultimate_task/widgets/custom_text_field.dart';
+import 'package:ultimate_task/widgets/custom_show_more.dart';
+import 'package:ultimate_task/widgets/login/custom_appbar.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -12,45 +14,14 @@ class LoginScreen extends StatelessWidget {
       body: SizedBox(
         child: Column(
           children: [
-     Stack(
-            children: [
-              Container(
-                height: 130,
-                color:  Colors.transparent
-              ),
-                Image.asset(
-                        'assets/ONYX.png', 
-                 
-                        height: 120,
-                      ),
-              Positioned(
-                right: -80,
-                top: -80,
-                child: Container(
-                  width: 200,
-                  height: 180,
-                  decoration: const BoxDecoration(
-                    color:  Colors.red,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              ),
-              Positioned(
-                right: 20,
-                top: 20,
-                child: const Icon(Icons.language, color: Colors.white),
-              ),
-      
-        
          
-            ],
-          ),
+         // Appbar
+         cutomAppbar(),
 
-     
-
-
+    
             SizedBox(height: 10),
-        
+
+        //Title
             Text(
               "Welcome Back!",
               style: TextStyle(
@@ -78,23 +49,13 @@ class LoginScreen extends StatelessWidget {
         
             SizedBox(height: 10),
         
-            
-            Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: EdgeInsets.only(right: 30),
-                child: Text(
-                  "Show More",
-                  style: TextStyle(
-                    color: Colors.teal[900],
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ),
+            // Show More
+            customShowMore(),
         
             SizedBox(height: 10),
         
+
+        // Button Login
             Obx(() => controller.isLoading.value
                 ? CircularProgressIndicator()
                 : Container(
@@ -113,7 +74,7 @@ class LoginScreen extends StatelessWidget {
        
         
             SizedBox(height: 10),
-        
+        // Image 
             Image.asset(
               'assets/delivery.png', 
               height: 150,
@@ -127,3 +88,4 @@ class LoginScreen extends StatelessWidget {
 
   
   }
+

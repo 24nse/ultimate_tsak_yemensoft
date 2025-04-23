@@ -1,6 +1,6 @@
 
 import 'package:get/get.dart';
-import 'package:ultimate_task/services/api_services1.dart';
+import 'package:ultimate_task/services/api_service.dart';
 import '../models/delivery_bill_model.dart';
 import '../services/db_service.dart';
 
@@ -25,17 +25,20 @@ var selectedTab = 0.obs;
       if (apiData.isNotEmpty) {
         await _db.insertBills(apiData);
         bills.assignAll(apiData);
-        Get.snackbar('✅ تم الحفظ', 'تم تحميل الفواتير وحفظها بنجاح');
+        Get.snackbar('Saved ','The invoices have been uploaded and saved successfully!' );
       } else {
-        Get.snackbar('❕ لا توجد بيانات', 'لم يتم تحميل أي فواتير من السيرفر');
+        Get.snackbar('no data ','The invoices are not downloaded from server' );
       }
     } catch (e) {
-      Get.snackbar('❌ خطأ', 'فشل أثناء الحفظ: ${e.toString()}');
+      Get.snackbar('Error','Failed while saving ${e.toString()}');
     } finally {
       isLoading.value = false;
     }
   }
+  
 
+
+  
   void filterByStatus(int status) async {
     final filtered = await _db.filterByStatus(status);
     bills.assignAll(filtered);

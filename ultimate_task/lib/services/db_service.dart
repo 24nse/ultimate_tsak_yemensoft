@@ -11,7 +11,7 @@ class DBService {
     _db = await initDB();
     return _db!;
   }
-
+ // Init DataBase Method
   Future<Database> initDB() async {
     String path = join(await getDatabasesPath(), 'bills.db');
 
@@ -45,6 +45,8 @@ class DBService {
     );
   }
 
+// Insert Bills Method
+
   Future<void> insertBills(List<DeliveryBill> bills) async {
     final db = await database;
     final batch = db.batch();
@@ -60,12 +62,16 @@ class DBService {
     await batch.commit(noResult: true);
   }
 
+
+// Get All Bills Method
   Future<List<DeliveryBill>> getAllBills() async {
     final db = await database;
     final result = await db.query('bills');
     return result.map((e) => DeliveryBill.fromMap(e)).toList();
   }
 
+
+// Filter By Status Method
   Future<List<DeliveryBill>> filterByStatus(int status) async {
     final db = await database;
     final result = await db.query(
